@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Interativo com JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Interatividade Web com JS</h1>
+            <p class="header-subtitle">Um exemplo prático de funcionalidades dinâmicas</p>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#funcionalidades" class="nav-link">Funcionalidades</a></li>
+                <li class="nav-item"><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                <li class="nav-item"><a href="#formulario" class="nav-link">Formulário</a></li>
+                <li class="nav-item"><a href="#secoes" class="nav-link">Seções</a></li>
+                <li class="nav-item"><a href="#animacoes" class="nav-link">Animações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2 id="funcionalidades" class="section-title">Funcionalidades do JavaScript</h2>
+        <p class="section-description">
+            Clique nos botões abaixo para ver as funcionalidades de manipulação de DOM,
+            eventos e interações com o usuário em tempo real.
+        </p>
+
+        <div class="functions-container">
+
+            <div class="function-block">
+                <h3>Funcionalidade 1: Esconder/Mostrar Texto</h3>
+                <p id="paragrafo-exemplo" class="interactive-text">
+                    Este é um texto de exemplo que será escondido ou exibido
+                    com o clique do botão. A visibilidade é controlada via JavaScript.
+                </p>
+                <button id="toggle-button" class="func-button">Esconder/Mostrar</button>
+            </div>
+
+            <div class="function-block">
+                <h3>Funcionalidade 2: Mudar Cor de Fundo</h3>
+                <p>Clique no botão para alternar a cor de fundo do corpo da página.</p>
+                <button id="color-button" class="func-button">Mudar Cor</button>
+            </div>
+
+            <div class="function-block">
+                <h3>Funcionalidade 3: Adicionar Item à Lista</h3>
+                <p>Use o campo abaixo para adicionar um novo item à lista de tarefas.</p>
+                <input type="text" id="novo-item-input" placeholder="Novo item..." class="func-input">
+                <button id="add-item-button" class="func-button">Adicionar</button>
+                <ul id="lista-dinamica" class="dynamic-list">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                </ul>
+            </div>
+
+            <div class="function-block">
+                <h3>Funcionalidade 4: Validação de Campo</h3>
+                <p>Digite seu nome. Se o campo estiver vazio, uma mensagem de erro aparecerá.</p>
+                <input type="text" id="validar-nome-input" placeholder="Digite seu nome..." class="func-input">
+                <button id="validar-button" class="func-button">Validar</button>
+                <span id="validacao-mensagem" class="validation-message"></span>
+            </div>
+
+            <div class="function-block">
+                <h3>Funcionalidade 5: Contador de Cliques</h3>
+                <p>Clique no botão para contar quantas vezes ele foi clicado.</p>
+                <button id="contador-button" class="func-button">Clique aqui!</button>
+                <p>Cliques: <span id="contador-display">0</span></p>
+            </div>
+        </div>
+    </main>
+
+    <section class="testimonials-section">
+        <h2 id="depoimentos" class="section-title">Depoimentos dos Clientes</h2>
+        <p class="section-description">
+            Leia o que alguns de nossos clientes têm a dizer sobre nosso projeto.
+        </p>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">
+                        "O site é incrivelmente intuitivo! As funcionalidades funcionam perfeitamente
+                        e a experiência de usuário é excelente."
+                    </p>
+                    <p class="testimonial-author">- Ana Paula</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">
+                        "A organização e os comentários no código são um grande diferencial.
+                        Fácil de entender e de usar como referência para meus próprios projetos."
+                    </p>
+                    <p class="testimonial-author">- Lucas Faria</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">
+                        "Nunca imaginei que o JavaScript pudesse ser tão poderoso. As
+                        funcionalidades são simples, mas extremamente úteis e bem implementadas."
+                    </p>
+                    <p class="testimonial-author">- Carla Ramos</p>
+                </div>
+            </div>
+            <button class="carousel-button prev-button">&#10094;</button>
+            <button class="carousel-button next-button">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 id="formulario" class="section-title">Formulário Completo</h2>
+        <p class="section-description">
+            Este formulário demonstra validações mais complexas e interações com o usuário.
+        </p>
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required class="form-input">
+                <span id="email-error" class="validation-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required class="form-input"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Enviar Mensagem</button>
+        </form>
+
+        <div class="calculator-container">
+            <h3>Funcionalidade Extra: Calculadora</h3>
+            <div class="calc-inputs">
+                <input type="number" id="num1" class="calc-input" placeholder="Número 1">
+                <select id="operador" class="calc-input">
+                    <option value="soma">+</option>
+                    <option value="subtracao">-</option>
+                    <option value="multiplicacao">*</option>
+                    <option value="divisao">/</option>
+                </select>
+                <input type="number" id="num2" class="calc-input" placeholder="Número 2">
+                <button id="calcular-button" class="func-button">=</button>
+            </div>
+            <p>Resultado: <span id="resultado-calc"></span></p>
+        </div>
+    </section>
+
+    <section class="accordion-section">
+        <h2 id="secoes" class="section-title">Seções de Conteúdo</h2>
+        <div class="accordion-container">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Seção 1: O que é HTML?</h3>
+                </div>
+                <div class="accordion-content">
+                    <p>O HTML (HyperText Markup Language) é a linguagem de marcação
+                        utilizada para estruturar o conteúdo de uma página web, como
+                        títulos, parágrafos, listas e imagens. É o esqueleto de qualquer
+                        site.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Seção 2: O que é CSS?</h3>
+                </div>
+                <div class="accordion-content">
+                    <p>O CSS (Cascading Style Sheets) é a linguagem de estilo usada para
+                        apresentar a página web de forma visualmente agradável. Ele controla
+                        cores, fontes, layouts e a aparência geral do site.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>Seção 3: O que é JavaScript?</h3>
+                </div>
+                <div class="accordion-content">
+                    <p>O JavaScript é uma linguagem de programação que permite
+                        implementar funcionalidades complexas em uma página web,
+                        criando conteúdo dinâmico, animações, jogos e muito mais.
+                        Ele dá vida ao site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="animation-section">
+        <h2 id="animacoes" class="section-title">Animações Dinâmicas</h2>
+        <p class="section-description">
+            Clique no botão para adicionar uma classe que ativa uma animação.
+        </p>
+        <div class="animation-container">
+            <div id="box-animada" class="animation-box">
+                <p>Clique para animar!</p>
+            </div>
+            <button id="animate-button" class="func-button">Ativar Animação</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Projeto Web. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

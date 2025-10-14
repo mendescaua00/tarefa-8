@@ -1,0 +1,357 @@
+/*
+========================================================
+ESTILIZAÇÃO GERAL E RESET
+========================================================
+*/
+/* Reseta as propriedades padrão dos navegadores para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+/* Estilos de cabeçalho e títulos */
+.header,
+.main-content,
+.testimonials-section,
+.form-section,
+.accordion-section,
+.animation-section,
+.footer {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.8em;
+    color: #007bff;
+    text-transform: uppercase;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+
+/*
+========================================================
+ESTILIZAÇÃO DOS BOTÕES E CAMPOS DE ENTRADA
+========================================================
+*/
+.func-button,
+.submit-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.func-button:hover,
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.func-input,
+.form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.func-input:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Mensagens de validação e erro */
+.validation-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+/*
+========================================================
+LAYOUT DE SEÇÕES (FLEXBOX E GRID)
+========================================================
+*/
+/* Navegação */
+.main-nav {
+    margin-top: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Container de funcionalidades */
+.functions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.function-block {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dynamic-list {
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.dynamic-list li {
+    padding: 8px 12px;
+    background-color: #e9ecef;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.dynamic-list li:hover {
+    background-color: #dee2e6;
+}
+
+/*
+========================================================
+ESTILIZAÇÃO DE SEÇÕES EXTRAS
+========================================================
+*/
+/* Carrossel de Depoimentos */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-item {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Formulário e Calculadora */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.calculator-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calc-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calc-input {
+    flex-grow: 1;
+}
+
+/* Accordion */
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    background-color: #f0f8ff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-content.active {
+    max-height: 500px; /* Valor grande o suficiente para expandir o conteúdo */
+}
+
+/* Animação */
+.animation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.animation-box {
+    width: 150px;
+    height: 150px;
+    background-color: #ff6347;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    transition: transform 1s ease;
+}
+
+.animated {
+    animation: rotateScale 2s ease-in-out forwards;
+}
+
+@keyframes rotateScale {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/*
+========================================================
+RESPONSIVIDADE (MEDIA QUERIES)
+========================================================
+*/
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .functions-container {
+        flex-direction: column;
+    }
+
+    .function-block {
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .func-button {
+        width: 100%;
+    }
+}
