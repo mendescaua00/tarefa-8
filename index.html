@@ -14,6 +14,7 @@
         <div class="header-content">
             <h1 class="header-title">Interatividade Web com JS</h1>
             <p class="header-subtitle">Um exemplo prático de funcionalidades dinâmicas</p>
+            <button id="dark-mode-toggle" class="mode-toggle">Modo Escuro</button>
         </div>
         <nav class="main-nav">
             <ul class="nav-list">
@@ -22,6 +23,9 @@
                 <li class="nav-item"><a href="#formulario" class="nav-link">Formulário</a></li>
                 <li class="nav-item"><a href="#secoes" class="nav-link">Seções</a></li>
                 <li class="nav-item"><a href="#animacoes" class="nav-link">Animações</a></li>
+                <li class="nav-item"><a href="#tabela" class="nav-link">Tabela</a></li>
+                <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#login" class="nav-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -105,6 +109,21 @@
                         funcionalidades são simples, mas extremamente úteis e bem implementadas."
                     </p>
                     <p class="testimonial-author">- Carla Ramos</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">
+                        "A atenção aos detalhes e a clareza do código me ajudaram a aprender
+                        muito sobre como o JavaScript realmente funciona na prática. É inspirador."
+                    </p>
+                    <p class="testimonial-author">- Ricardo Souza</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">
+                        "Este projeto é um ótimo ponto de partida para qualquer iniciante.
+                        As funcionalidades são bem documentadas e fáceis de adaptar para
+                        outros propósitos."
+                    </p>
+                    <p class="testimonial-author">- Patrícia Lima</p>
                 </div>
             </div>
             <button class="carousel-button prev-button">&#10094;</button>
@@ -202,6 +221,59 @@
         </div>
     </section>
 
+    <section class="table-section">
+        <h2 id="tabela" class="section-title">Tabela de Dados Dinâmica</h2>
+        <p class="section-description">
+            A tabela abaixo demonstra a manipulação de arrays e a renderização de dados
+            em tempo real. Use a barra de pesquisa para filtrar os resultados.
+        </p>
+        <div class="table-container">
+            <input type="text" id="filter-input" placeholder="Pesquisar por nome ou cargo..." class="table-filter">
+            <table id="data-table" class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <h2 id="blog" class="section-title">Blog de Notícias</h2>
+        <p class="section-description">
+            Artigos de blog que são carregados e exibidos dinamicamente na página.
+        </p>
+        <div id="blog-container" class="blog-container">
+            </div>
+    </section>
+
+    <section class="login-section">
+        <h2 id="login" class="section-title">Acesse sua Conta</h2>
+        <p class="section-description">
+            Formulário de login para demonstrar validação e manipulação de formulários com JS.
+        </p>
+        <div class="login-container">
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required class="login-input">
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required class="login-input">
+                </div>
+                <button type="submit" class="login-button">Entrar</button>
+                <span id="login-error-message" class="validation-message"></span>
+            </form>
+        </div>
+    </section>
+
     <footer class="footer">
         <p>&copy; 2025 Projeto Web. Todos os direitos reservados.</p>
     </footer>
@@ -210,3 +282,107 @@
 </body>
 
 </html>
+<!-- ============================
+  INÍCIO - BLOCOS ADICIONAIS (≈300 linhas)
+  Cole ESTE BLOCO antes da tag </body> do seu index.html.
+  Cada seção tem comentários em Português explicando a finalidade.
+============================ -->
+
+<!-- =========================================================
+  AÇÃO RÁPIDA: SKIP LINK (melhora acessibilidade para leitura)
+  Permite usuários de teclado/pessoas com leitores de tela pular direto ao conteúdo.
+========================================================= -->
+<a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;overflow:hidden;">
+    Ir para o conteúdo principal
+</a>
+
+<!-- =========================================================
+  SEÇÃO: DASHBOARD DE ESTATÍSTICAS (visual estático com indicadores)
+  - Mostra métricas chave; ícones e textos simples para simular um dashboard.
+  - Ideal para complementar a parte interativa do projeto.
+========================================================= -->
+<section class="dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+    <!-- Título da seção -->
+    <h2 id="dashboard-title" class="section-title">Painel de Estatísticas</h2>
+    <p class="section-description">Visão rápida dos indicadores principais do sistema (ex.: usuários, projetos, taxa de sucesso).</p>
+
+    <!-- Container flexível com cartões de estatísticas -->
+    <div class="dashboard-cards" role="list" aria-label="Indicadores principais">
+        <!-- Cartão 1 -->
+        <div class="stat-card" role="listitem" aria-describedby="stat1-desc">
+            <div class="stat-icon" aria-hidden="true">👥</div>
+            <h3 class="stat-value">3.240</h3>
+            <p id="stat1-desc" class="stat-label">Usuários Ativos</p>
+        </div>
+
+        <!-- Cartão 2 -->
+        <div class="stat-card" role="listitem" aria-describedby="stat2-desc">
+            <div class="stat-icon" aria-hidden="true">📁</div>
+            <h3 class="stat-value">152</h3>
+            <p id="stat2-desc" class="stat-label">Projetos Publicados</p>
+        </div>
+
+        <!-- Cartão 3 -->
+        <div class="stat-card" role="listitem" aria-describedby="stat3-desc">
+            <div class="stat-icon" aria-hidden="true">⚡</div>
+            <h3 class="stat-value">98%</h3>
+            <p id="stat3-desc" class="stat-label">Tempo de Uptime</p>
+        </div>
+
+        <!-- Cartão 4 -->
+        <div class="stat-card" role="listitem" aria-describedby="stat4-desc">
+            <div class="stat-icon" aria-hidden="true">⭐</div>
+            <h3 class="stat-value">4.9</h3>
+            <p id="stat4-desc" class="stat-label">Avaliação Média</p>
+        </div>
+    </div>
+    <!-- Observação: esses valores são estáticos e servem para exemplo visual.
+         Em um cenário real, eles seriam atualizados via API/JavaScript. -->
+</section>
+
+<!-- =========================================================
+  SEÇÃO: GALERIA AVANÇADA COM MODAL (imagens com zoom)
+  - Miniaturas em grid; ao clicar abre modal com imagem ampliada.
+  - Inclui atributos ARIA para melhor acessibilidade.
+========================================================= -->
+<section class="advanced-gallery-section" id="advanced-gallery" aria-labelledby="gallery-title">
+    <h2 id="gallery-title" class="section-title">Galeria Interativa</h2>
+    <p class="section-description">Clique nas miniaturas para ver a imagem em tamanho maior. Feche com ESC ou no botão.</p>
+
+    <!-- Grid de miniaturas -->
+    <div class="advanced-gallery-grid" role="list">
+        <!-- Cada item possui data-src com imagem grande para ser carregada pelo JS -->
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Projeto A - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+1" tabindex="0" class="thumb-img">
+            <figcaption>Projeto A</figcaption>
+        </figure>
+
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Projeto B - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+2" tabindex="0" class="thumb-img">
+            <figcaption>Projeto B</figcaption>
+        </figure>
+
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Projeto C - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+3" tabindex="0" class="thumb-img">
+            <figcaption>Projeto C</figcaption>
+        </figure>
+
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+4" alt="Projeto D - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+4" tabindex="0" class="thumb-img">
+            <figcaption>Projeto D</figcaption>
+        </figure>
+
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+5" alt="Projeto E - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+5" tabindex="0" class="thumb-img">
+            <figcaption>Projeto E</figcaption>
+        </figure>
+
+        <figure class="thumb" role="listitem">
+            <img src="https://via.placeholder.com/300x200?text=Foto+6" alt="Projeto F - miniatura"
+                 data-large="https://via.placeholder.com/1200x800?text=Projeto+6" tabindex="0" class="thumb-img">
+            <figcaption>Projeto F</figcaption>

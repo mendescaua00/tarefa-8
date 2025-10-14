@@ -16,6 +16,37 @@ body {
     color: #333;
     background-color: #f0f2f5;
     padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .header,
+.dark-mode .main-content,
+.dark-mode .testimonials-section,
+.dark-mode .form-section,
+.dark-mode .accordion-section,
+.dark-mode .animation-section,
+.dark-mode .table-section,
+.dark-mode .blog-section,
+.dark-mode .login-section,
+.dark-mode .footer {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .section-title {
+    color: #87ceeb;
+}
+
+.dark-mode .section-description,
+.dark-mode .testimonial-quote,
+.dark-mode .testimonial-author {
+    color: #b0b0b0;
 }
 
 /* Estilos de cabeçalho e títulos */
@@ -25,6 +56,9 @@ body {
 .form-section,
 .accordion-section,
 .animation-section,
+.table-section,
+.blog-section,
+.login-section,
 .footer {
     padding: 40px 20px;
     margin-bottom: 20px;
@@ -51,13 +85,33 @@ body {
     font-size: 1.1em;
 }
 
+/* Botão de Modo Escuro */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode .mode-toggle {
+    background-color: #555;
+    color: white;
+    border-color: #444;
+}
+
 /*
 ========================================================
 ESTILIZAÇÃO DOS BOTÕES E CAMPOS DE ENTRADA
 ========================================================
 */
 .func-button,
-.submit-button {
+.submit-button,
+.login-button {
     padding: 12px 25px;
     background-color: #007bff;
     color: white;
@@ -70,13 +124,16 @@ ESTILIZAÇÃO DOS BOTÕES E CAMPOS DE ENTRADA
 }
 
 .func-button:hover,
-.submit-button:hover {
+.submit-button:hover,
+.login-button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
 .func-input,
-.form-input {
+.form-input,
+.table-filter,
+.login-input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -87,7 +144,9 @@ ESTILIZAÇÃO DOS BOTÕES E CAMPOS DE ENTRADA
 }
 
 .func-input:focus,
-.form-input:focus {
+.form-input:focus,
+.table-filter:focus,
+.login-input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -116,7 +175,7 @@ LAYOUT DE SEÇÕES (FLEXBOX E GRID)
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -153,6 +212,11 @@ LAYOUT DE SEÇÕES (FLEXBOX E GRID)
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.dark-mode .function-block {
+    background-color: #3a3a3a;
+    border-color: #444;
+}
+
 .dynamic-list {
     list-style-type: none;
     margin-top: 15px;
@@ -166,8 +230,17 @@ LAYOUT DE SEÇÕES (FLEXBOX E GRID)
     transition: background-color 0.3s;
 }
 
+.dark-mode .dynamic-list li {
+    background-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
 .dynamic-list li:hover {
     background-color: #dee2e6;
+}
+
+.dark-mode .dynamic-list li:hover {
+    background-color: #5a5a5a;
 }
 
 /*
@@ -202,6 +275,10 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     margin-bottom: 15px;
 }
 
+.dark-mode .testimonial-quote {
+    color: #b0b0b0;
+}
+
 .testimonial-author {
     font-weight: bold;
     color: #007bff;
@@ -220,16 +297,12 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     z-index: 10;
 }
 
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
-}
+.prev-button { left: 10px; }
+.next-button { right: 10px; }
 
 /* Formulário e Calculadora */
-.contact-form {
+.contact-form,
+.login-form {
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -246,15 +319,17 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.dark-mode .calculator-container {
+    background-color: #3a3a3a;
+}
+
 .calc-inputs {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.calc-input {
-    flex-grow: 1;
-}
+.calc-input { flex-grow: 1; }
 
 /* Accordion */
 .accordion-container {
@@ -272,6 +347,10 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     transition: background-color 0.3s;
 }
 
+.dark-mode .accordion-header {
+    background-color: #0056b3;
+}
+
 .accordion-header:hover {
     background-color: #0056b3;
 }
@@ -286,8 +365,13 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     transition: max-height 0.5s ease-in-out;
 }
 
+.dark-mode .accordion-content {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
 .accordion-content.active {
-    max-height: 500px; /* Valor grande o suficiente para expandir o conteúdo */
+    max-height: 500px;
 }
 
 /* Animação */
@@ -320,6 +404,126 @@ ESTILIZAÇÃO DE SEÇÕES EXTRAS
     0% { transform: rotate(0deg) scale(1); }
     50% { transform: rotate(180deg) scale(1.2); }
     100% { transform: rotate(360deg) scale(1); }
+}
+
+/*
+========================================================
+ESTILIZAÇÃO DE NOVAS SEÇÕES
+========================================================
+*/
+/* Tabela de Dados */
+.table-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.table-filter {
+    margin-bottom: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .data-table {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.data-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dark-mode .data-table td {
+    border-bottom: 1px solid #444;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dark-mode .data-table tbody tr:nth-child(even) {
+    background-color: #383838;
+}
+
+/* Blog */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.blog-article {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .blog-article {
+    background-color: #3a3a3a;
+}
+
+.blog-article:hover {
+    transform: translateY(-5px);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.blog-summary {
+    color: #555;
+    font-size: 0.9em;
+}
+
+.dark-mode .blog-summary {
+    color: #b0b0b0;
+}
+
+/* Login */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .login-container {
+    background-color: #3a3a3a;
+}
+
+.login-input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.login-button {
+    width: 100%;
 }
 
 /*
