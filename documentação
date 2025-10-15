@@ -1,0 +1,207 @@
+========================================================
+RELATÓRIO TÉCNICO DE PROJETO WEB - FUNCIONALIDADES DINÂMICAS
+========================================================
+
+OBJETIVO:
+---------
+Este relatório descreve de forma detalhada o projeto web contendo HTML, CSS e JavaScript,
+com funcionalidades dinâmicas de aula, extras e adicionais, incluindo:
+- Interações com DOM
+- Validações de formulário
+- Tabela e blog dinâmicos
+- Carrossel, animações e modo escuro
+
+========================================================
+1. ESTRUTURA HTML
+========================================================
+
+O HTML do projeto está estruturado em seções principais:
+- Header: navegação e título
+- Main: conteúdo central com funcionalidades
+- Seções extras: carrossel, formulário, calculadora, accordion, animação, tabela, blog, login
+- Footer: informações finais
+
+Exemplo de bloco de funcionalidades:
+
+<div class="functions-container">
+    <div class="function-block">
+        <button id="toggle-button" class="func-button">Exibir/Esconder</button>
+        <p id="paragrafo-exemplo">Exemplo de parágrafo para toggle.</p>
+    </div>
+</div>
+
+Comentário:
+- "toggle-button" é o botão que alterna a visibilidade do parágrafo.
+- "paragrafo-exemplo" é o elemento que será exibido ou escondido via JS.
+
+========================================================
+2. ESTILIZAÇÃO CSS
+========================================================
+
+2.1 Reset e Estilização Geral
+-----------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5;
+    padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+Comentário:
+- Reset remove margens e paddings padrão.
+- Transições suavizam mudanças de cor em modo escuro e eventos JS.
+
+2.2 Modo Escuro
+----------------
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .section-title {
+    color: #87ceeb;
+}
+
+Comentário:
+- Alterna cores de fundo, textos e seções via JS (darkModeToggle).
+- Proporciona experiência visual consistente para tema escuro.
+
+2.3 Botões e Inputs
+--------------------
+.func-button, .submit-button, .login-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+Comentário:
+- Botões estilizados com cores e efeitos de hover.
+- Inputs possuem foco destacado com box-shadow.
+
+2.4 Layout de Seções
+---------------------
+.functions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.function-block {
+    flex-basis: 300px;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+Comentário:
+- Flexbox para organizar blocos responsivamente.
+- Cada bloco tem sombra e padding para destaque visual.
+
+2.5 Seções Extras
+------------------
+- Carousel, formulário, calculadora, accordion e animação possuem containers específicos.
+- Cada container tem estilos adaptados para dark mode e responsividade.
+
+========================================================
+3. JAVASCRIPT
+========================================================
+
+3.1 Declaração de Variáveis
+----------------------------
+Exemplo:
+
+const toggleButton = document.getElementById('toggle-button');
+const paragrafoExemplo = document.getElementById('paragrafo-exemplo');
+
+Comentário:
+- Captura elementos do DOM para manipulação posterior.
+
+3.2 Funcionalidades de Aula
+----------------------------
+1) Exibir/Esconder Parágrafo:
+
+toggleButton.addEventListener('click', () => {
+    if (paragrafoExemplo.style.display === 'none' || paragrafoExemplo.style.display === '') {
+        paragrafoExemplo.style.display = 'block';
+    } else {
+        paragrafoExemplo.style.display = 'none';
+    }
+});
+
+Comentário:
+- Alterna a visibilidade do parágrafo.
+- Usa style.display diretamente.
+
+2) Alterar Cor de Fundo:
+
+colorButton.addEventListener('click', () => {
+    const cores = ['#ffcc00', '#66ccff', '#ff6666', '#99ff99', '#ff99ff'];
+    const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+    document.body.style.backgroundColor = corAleatoria;
+});
+
+Comentário:
+- Escolhe uma cor aleatória do array e aplica no body.
+
+3) Adicionar Item à Lista
+4) Validação de Campo
+5) Contador de Cliques
+
+(Todas seguem a mesma lógica de manipulação do DOM com eventListeners)
+
+3.3 Funcionalidades Extras
+----------------------------
+6) Validação de Email
+7) Calculadora Simples
+8) Accordion
+9) Animação
+10) Carrossel de Depoimentos
+
+Comentário:
+- Incluem manipulação de classes, cálculos, animações CSS via JS e navegação em carrossel.
+
+3.4 Funcionalidades Adicionais
+-------------------------------
+11) Modo Escuro
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+Comentário:
+- Alterna classe "dark-mode" no body.
+- CSS faz o resto do trabalho de estilização.
+
+12) Tabela Filtrável
+13) Blog Dinâmico
+14) Login Simples
+15) Adicionar Itens com Enter
+
+Comentário:
+- Cada função segue padrão: captura do DOM, manipulação de elementos, renderização dinâmica.
+
+========================================================
+4. RESPONSIVIDADE
+========================================================
+- Media Queries para telas <768px: flex-direction coluna.
+- Media Queries para telas <480px: ajuste de padding e largura de botões.
+- Garante compatibilidade em dispositivos móveis.
+
+========================================================
+5. CONCLUSÃO TÉCNICA
+========================================================
+- O projeto demonstra **bom uso de HTML semântico, CSS moderno e JavaScript para interatividade**.
+- Permite fácil manutenção e adição de novas funcionalidades.
+- Inclui **dark mode, tabelas e blog dinâmicos, validações e animações**, cobrindo conceitos avançados de front-end.
+- Responsividade e UX foram priorizadas.
